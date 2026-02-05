@@ -1,5 +1,12 @@
-function greet(name: string): string {
-  return `Hello ${name}`;
-}
+import express from 'express';
 
-console.log(greet("Noel"));
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Bienvenue sur mon serveur API');
+});
+
+app.listen(port, () => {
+  console.log(`Serveur en écoute sur le port ${port}`);
+});
