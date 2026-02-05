@@ -1,4 +1,5 @@
 import express from 'express';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 const port = 3000;
@@ -8,6 +9,8 @@ const etudiants = [
   { id: 2, nom: "Martin", prenom: "Sophie" },
   { id: 3, nom: "Doe", prenom: "John" },
 ];
+
+app.use(userRoutes);
 
 app.get('/', (req, res) => {
   res.send('Bienvenue sur mon serveur API');
